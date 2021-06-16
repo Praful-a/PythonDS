@@ -18,8 +18,16 @@ class LinkedList:
 		current = self.head
 		while current:
 			prev = current.next
-			del current.data
+			current = None
 			current = prev
+	
+	def display(self):
+		if(self.head == None):
+			print("\n .. List is empty ..")
+		else:
+			while(self.head != None):
+				print("  " + "{}".format(self.head.data), end=" ")
+				self.head = self.head.next
 
 
 if __name__ == '__main__':
@@ -27,6 +35,9 @@ if __name__ == '__main__':
 	lst.push(1)
 	lst.push(2)
 	lst.push(10)
-	print("Deleting the list")
+	print("\n .. List Constains : ", end="")
+	lst.display()
+	print("\n .. Deleting the list ..")
 	lst.deleteList()
-	print("Linked list deleted")
+	print(" .. Linked list deleted ..")
+	lst.display()
