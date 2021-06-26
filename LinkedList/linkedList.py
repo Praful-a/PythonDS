@@ -1,4 +1,6 @@
 # Single Linked list
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -38,16 +40,17 @@ class Linkedlist:
             print("\n .. List is empty ..")
             return
         else:
-            while (self.head != None):
+            temp = self.head
+            while (temp != None):
                 count += 1
-                self.head = self.head.next
+                temp = temp.next
         return count
 
     def insertAtPos(self, pos, data):
         newNode = Node(data)
-            
-        if(pos < 1):
-            print("\n .. Position should be >= 1.")
+        count = self.size()
+        if(pos < 1 or pos > count):
+            print("\n Invalid Position !!")
         elif(pos == 1):
             newNode.next = self.head
             self.head = newNode
@@ -55,14 +58,12 @@ class Linkedlist:
         else:
             temp = self.head
             for i in range(1, pos - 1):
-                if(temp != None):
-                    temp = temp.next
-            if (temp != None):
-                newNode.next = temp.next
-                temp.next = newNode
-                print("\n .. Inserted Successfully ..")
-            else:
-                print("\n .. The previous node is null ..")
+                temp = temp.next
+        
+            newNode.next = temp.next
+            temp.next = newNode
+            print("\n .. Inserted Successfully ..")
+            
             
     def deleteAtBeg(self):
         if (self.head == None):
@@ -92,10 +93,11 @@ class Linkedlist:
             print("\n .. Deleted Successfully ..")
 
     def deleteAtPos(self, pos):
+        count = self.size()
         if(self.head == None):
             print("\n .. List is empty ..")
-        if (pos < 1):
-            print("\n .. Position should be >= 1")
+        if (pos < 1 or pos > count):
+            print("\n Invalid Position !!")
         elif(pos == 1):
             temp = self.head
             self.head = self.head.next
@@ -105,18 +107,14 @@ class Linkedlist:
         else:
             temp = self.head
             for i in range(1, pos):
-                if(temp != None):
-                    prev = temp
-                    temp = temp.next
-            if(temp != None):
-                prev.next = temp.next
-                temp.next = None
-                print("\n .. Deleted element is : ", temp.data)
-                temp = None
-                print("\n .. Deleted Successfully ..")
-            else:
-                print("\n .. Poistion does not exists ..")
-
+                prev = temp
+                temp = temp.next
+            prev.next = temp.next
+            temp.next = None
+            print("\n .. Deleted element is : ", temp.data)
+            temp = None
+            print("\n .. Deleted Successfully ..")
+            
     def display(self):
         cur = self.head
         if (cur == None):
