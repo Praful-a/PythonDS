@@ -12,17 +12,18 @@ class LinkList:
         newNode.next = self.head
         self.head = newNode
     
-    def getNth(self, index):
+    def getNth(self, llist, position):
+        llist.getNthNode(self.head, position, llist)
+
+    def getNthNode(self, head, position, llist):
         count = 0
-        if(self.head == None):
-            print("\n List is empty ")
+        if(head):
+            if count == position:
+                print(head.data)
+            else:
+                llist.getNthNode(head.next, position - 1, llist)
         else:
-            temp = self.head
-            while(temp != None):
-                if (count == index):
-                    return temp.data
-                count += 1
-                temp = temp.next
+            print(" Index Doesn\'t exists ")
 
     def display(self):
         if(self.head == None):
@@ -42,5 +43,5 @@ if __name__ == '__main__':
     L.push(40)
     L.push(50)
     L.display()
-    print()
-    print(" The elemet at 3 is :", L.getNth(2))
+    print("\n Element at Index 3 is", end= " ")
+    L.getNth(L, 3)
