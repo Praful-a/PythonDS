@@ -63,5 +63,5 @@ if __name__ == '__main__':
     cll.insertAtEnd(2)
     cll.insertAtEnd(21)
     cll.insertAfter(100, 10)
-    cll.insertAfter(101,2)
+    cll.insertAfter(101, 2)
     cll.display()
