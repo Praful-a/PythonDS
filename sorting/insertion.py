@@ -1,26 +1,13 @@
-def printArr(arr, n):
-    print(" .. Array elements are ..")
-    for i in range(n):
-        print(arr[i], end=" ")
+def insertion_sort(arr, n):
+    for i in range(1, n - 1):
+        key = arr[i]
+        j = i 
+        while(arr[j - 1] > key and j >= 1):
+            arr[j] = arr[j - 1]
+            j -= 1 
+        arr[j] = key  
+    return arr 
 
-def insertionSort(arr, n):
-
-    for i in range(1, n):
-        temp = arr[i]
-        j = i - 1
-        while(j >= 0 and arr[j] > temp):
-            arr[j+1] = arr[j]
-            j = j - 1
-        arr[j+1] = temp
-
-if __name__ == '__main__':
-    arr = []
-    size = int(input(" Enter the size of array :"))
-    print("Enter the array elements : ")
-    for i in range(size):
-        arr.append(int(input()))
-    print(" .. Before Sorting ..")
-    printArr(arr, size)
-    insertionSort(arr, size)
-    print("\n\n.. After Sorting ..")
-    printArr(arr, size)
+arr = [1, -3, -4, 100, -200, 500]
+size = len(arr)
+print(insertion_sort(arr, size))
