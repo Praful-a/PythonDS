@@ -1,3 +1,4 @@
+# Time complaxity = O(n^2)
 def insertion_sort(arr, n):
     for i in range(1, n - 1):
         key = arr[i]

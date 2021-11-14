@@ -1,26 +1,14 @@
-def printArr(arr, n):
-    print(" .. Array elements are ..")
-    for i in range(n):
-        print(arr[i], end=" ")
-
-def selectionSort(arr, n):
-    
+def selection_sort(arr, n):
     for i in range(n - 1):
-        min_ind = i
+        min_idx = i   
         for j in range(i + 1, n):
-            if(arr[j] < arr[min_ind]):
-                min_ind = j
-        arr[min_ind], arr[i] = arr[i], arr[min_ind]
+            if arr[j] < arr[min_idx]:
+                min_idx = j 
+        temp = arr[min_idx]
+        arr[min_idx] = arr[i]
+        arr[i] = temp 
+    return arr
 
-
-if __name__ == '__main__':
-    arr = []
-    size = int(input(" Enter the size of array :"))
-    print("Enter the array elements : ")
-    for i in range(size):
-        arr.append(int(input()))
-    print(" .. Before Sorting ..")
-    printArr(arr, size)
-    selectionSort(arr, size)
-    print("\n\n.. After Sorting ..")
-    printArr(arr, size)
+arr = [1, -3, -4, 100, -200, 500]
+size = len(arr)
+print(selection_sort(arr, size))
