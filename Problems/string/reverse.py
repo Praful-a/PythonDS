@@ -1,3 +1,4 @@
+# Time Complexity = O(n) Space = O(1)
 def reverse(string):
 	arr = list(string)
 	s = 0
