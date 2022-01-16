@@ -65,10 +65,25 @@
 1234
 12345
 '''
-def pattern4(n):
-	for row in range(1, n+1):
-		for col in range(1, row+1):
+# def pattern5(n):
+# 	for row in range(1, n+1):
+# 		for col in range(1, row+1):
+# 			print(col, end="")
+# 		print()
+
+# pattern5(5)
+
+'''
+5
+45
+345
+2345
+12345
+'''
+def pattern6(n):
+	for row in range(n, 0, -1):
+		for col in range(row, n+1):
 			print(col, end="")
 		print()
 
-pattern4(5)
+pattern6(5)
