@@ -80,10 +80,25 @@
 2345
 12345
 '''
-def pattern6(n):
-	for row in range(n, 0, -1):
-		for col in range(row, n+1):
+# def pattern6(n):
+# 	for row in range(n, 0, -1):
+# 		for col in range(row, n+1):
+# 			print(col, end="")
+# 		print()
+
+# pattern6(5)
+
+'''
+1
+21
+321
+4321
+54321
+'''
+def pattern7(n):
+	for row in range(1, n+1):
+		for col in range(row, 0, -1):
 			print(col, end="")
 		print()
 
-pattern6(5)
+pattern7(5)
