@@ -125,10 +125,25 @@
 4444
 55555
 '''
-def pattern9(n):
-	for row in range(1, n+1):
-		for col in range(row):
+# def pattern9(n):
+# 	for row in range(1, n+1):
+# 		for col in range(row):
+# 			print(row, end="")
+# 		print()
+
+# pattern9(5)
+
+'''
+5
+44
+333
+2222
+11111
+'''
+def pattern10(n):
+	for row in range(n, 0, -1):
+		for col in range(n, row-1, -1):
 			print(row, end="")
 		print()
 
-pattern9(5)
+pattern10(5)
