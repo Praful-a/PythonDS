@@ -155,10 +155,26 @@
 22
 1
 '''
-def pattern11(n):
-	for row in range(n, 0, -1):
-		for col in range(row):
+# def pattern11(n):
+# 	for row in range(n, 0, -1):
+# 		for col in range(row):
+# 			print(row, end="")
+# 		print()
+
+# pattern11(5)
+
+'''
+11111
+2222
+333
+44
+5
+'''
+def pattern12(n):
+	for row in range(1, n+1):
+		for col in range(n, row-1, -1):
 			print(row, end="")
 		print()
 
-pattern11(5)
+pattern12(5)
+
