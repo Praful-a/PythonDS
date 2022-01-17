@@ -95,10 +95,25 @@
 4321
 54321
 '''
-def pattern7(n):
-	for row in range(1, n+1):
-		for col in range(row, 0, -1):
+# def pattern7(n):
+# 	for row in range(1, n+1):
+# 		for col in range(row, 0, -1):
+# 			print(col, end="")
+# 		print()
+
+# pattern7(5)
+
+'''
+5
+54
+543
+5432
+54321
+'''
+def pattern8(n):
+	for row in range(n, 0, -1):
+		for col in range(n, row - 1, -1):
 			print(col, end="")
 		print()
 
-pattern7(5)
+pattern8(5)
