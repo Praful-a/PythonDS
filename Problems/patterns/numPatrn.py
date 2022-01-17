@@ -110,10 +110,25 @@
 5432
 54321
 '''
-def pattern8(n):
-	for row in range(n, 0, -1):
-		for col in range(n, row - 1, -1):
-			print(col, end="")
+# def pattern8(n):
+# 	for row in range(n, 0, -1):
+# 		for col in range(n, row - 1, -1):
+# 			print(col, end="")
+# 		print()
+
+# pattern8(5)
+
+'''
+1
+22
+333
+4444
+55555
+'''
+def pattern9(n):
+	for row in range(1, n+1):
+		for col in range(row):
+			print(row, end="")
 		print()
 
-pattern8(5)
+pattern9(5)
