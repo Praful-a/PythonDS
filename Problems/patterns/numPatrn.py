@@ -170,11 +170,31 @@
 44
 5
 '''
-def pattern12(n):
-	for row in range(1, n+1):
-		for col in range(n, row-1, -1):
-			print(row, end="")
+# def pattern12(n):
+# 	for row in range(1, n+1):
+# 		for col in range(n, row-1, -1):
+# 			print(row, end="")
+# 		print()
+
+# pattern12(5)
+
+'''
+12345
+4321
+123
+21
+1
+'''
+def pattern13(n):
+	for row in range(n, 0, -1):
+		num = 1 if(row % 2 == 1) else row
+		for col in range(1, row + 1):
+			print(num, end="")
+			if (row % 2 == 1):
+				num += 1
+			else:
+				num -= 1
 		print()
 
-pattern12(5)
+pattern13(5)
 
