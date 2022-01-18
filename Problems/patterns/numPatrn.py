@@ -185,16 +185,30 @@
 21
 1
 '''
-def pattern13(n):
-	for row in range(n, 0, -1):
-		num = 1 if(row % 2 == 1) else row
+# def pattern13(n):
+# 	for row in range(n, 0, -1):
+# 		num = 1 if(row % 2 == 1) else row
+# 		for col in range(1, row + 1):
+# 			print(num, end="")
+# 			if (row % 2 == 1):
+# 				num += 1
+# 			else:
+# 				num -= 1
+# 		print()
+
+# pattern13(5)
+
+
+'''
+1234567
+12345
+123
+1
+'''
+def pattern14(n):
+	for row in range(n, 0, -2):
 		for col in range(1, row + 1):
-			print(num, end="")
-			if (row % 2 == 1):
-				num += 1
-			else:
-				num -= 1
+			print(col, end="")
 		print()
 
-pattern13(5)
-
+pattern14(7)
