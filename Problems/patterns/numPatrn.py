@@ -205,10 +205,24 @@
 123
 1
 '''
-def pattern14(n):
-	for row in range(n, 0, -2):
-		for col in range(1, row + 1):
-			print(col, end="")
+# def pattern14(n):
+# 	for row in range(n, 0, -2):
+# 		for col in range(1, row + 1):
+# 			print(col, end="")
+# 		print()
+
+# pattern14(7)
+
+'''
+1
+01
+101
+0101
+'''
+def pattern15(n):
+	for row in range(1, n):
+		for col in range(row, 0, -1):
+			print(col%2, end="")
 		print()
 
-pattern14(7)
+pattern15(5)
