@@ -8,6 +8,5 @@ def maxOfArr(arr, idx):
 	else:
 		return arr[idx]
 
-
 arr = [220, 33, 40, 19, 7]
 print(maxOfArr(arr, 0))
